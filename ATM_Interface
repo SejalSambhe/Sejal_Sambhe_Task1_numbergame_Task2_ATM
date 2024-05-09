@@ -1,0 +1,107 @@
+/*
+Name:- Sejal Sambhe
+Date- 8/5/2024
+Task 2-ATM Interface project with foolowing task 
+    1.Transcation history
+    2.Withdraw
+    3.Deposite
+    4.Transfer
+    5.Quit
+ */
+package atmcode;
+ 
+import java.lang.*;
+import java.util.Scanner;
+
+public class Atmcode 
+{
+      public static void main(String[] args) 
+      {
+        //declare and initialize balance, withdraw, and deposit  
+        int balance = 700000;
+        int withdraw; 
+        int deposit;  
+          
+        Scanner sc = new Scanner(System.in);  //input given by user 
+  
+        while(true)  
+        {   
+            
+            
+            System.out.println("Enter the four digit pin: ");
+            int enter=sc.nextInt();
+            System.out.println(+enter);
+            
+            if(enter<10000)
+            {
+              System.out.println("Pin is valid continue Proccess \n");
+              System.out.println("To Check Balance Select 1");  
+              System.out.println("for Deposit select 2");  
+              System.out.println("To Withdraw select 3");  
+              System.out.println("For EXIT select 4");  
+              System.out.print("Select the one option from above for further proccess: \n");
+            }
+            else 
+            {
+             System.out.println("Pin is invalid ! " + " Try again "); 
+            
+            }
+            
+            int select = sc.nextInt();  
+           
+            switch(select)  //select value 
+            {  
+            case 1:  
+               
+            System.out.println("Balance : "+balance);  
+            //show the total balance of the user  
+            System.out.println("");  
+            break;  
+   
+   
+            case 2:  
+            System.out.print("Enter money to be deposited:");  
+                      
+            deposit = sc.nextInt();  
+             //get deposite amount from te user              
+            balance = balance + deposit;  
+            //add deposite amount to balance
+            System.out.println("Your Money has been depsited successfully");  
+            System.out.println(""); 
+            break;  
+   
+            
+            case 3: 
+            System.out.print("Enter money to be withdrawn:");  
+             withdraw = sc.nextInt();  
+            //get value for  withdraw money 
+       
+            if(balance >= withdraw)  
+            //check whether the balance is greater than or equal to the withdrawal amount  
+            {  
+              
+            balance = balance - withdraw;  
+            //remaining total balance
+            System.out.println("Please collect your money");  
+            }  
+            else  
+            {  
+            
+            System.out.println("Insufficient Balance");  
+            //show custom error message   
+            }  
+            System.out.println("");  
+            break;  
+            
+           case 4:  
+           System.exit(0); 
+       
+            } 
+            System.out.println("Process Completed.\n");
+        }
+    
+    }
+} 
+    
+    
+
