@@ -1,0 +1,77 @@
+ /*
+Name:-Sejal Sambhe
+Date:7/5/2024
+Task1:-Number Guessing Game task with following task
+       1. System generate random number for the given range of 1 to 100
+       2. The user is prompted to enter the given number in the display dialogue box
+       3. The computer tell if the number matches the guesses number or it is higher
+          /lower than the generated number.
+       4. The game continoues under the user guessing the number
+*/
+package nggameoi;
+
+import java.lang.*;
+import java.util.Scanner;
+
+
+public class game 
+{
+      public static void nggameoi()
+    {
+       Scanner sc = new Scanner(System.in); //take input from user
+        
+        int number =1+(int)(100* Math.random());
+ 
+        int N= 4;
+         // T trials or number of time the game continue
+        int j, guess;
+ 
+        System.out.println("Choose the number in between 1 to 100 ");
+ 
+      
+        for(j = 0; j < N; j++) //for loop for choosing different numbers
+        {
+ 
+            System.out.println("guess any number :");
+ 
+            guess = sc.nextInt();
+            // Take input for guessing
+ 
+            if (number==guess) // If the number is guessed right
+            {
+                System.out.println("Congratulations! You win " + " You guessed the correct number.");
+                
+            }
+           
+            else if (number>guess&&j!=N-1)  //If number is greater than guess
+            {
+                System.out.println("Try again" + " The number is " + "greater than " + guess);
+            }
+            else if (number<guess&&j!=N-1)  //If number is greater than guess
+            {
+                System.out.println("Try again" + " The number is" + " less than " + guess);
+            }
+            
+        } 
+            if(j==N)
+            {
+            System.out.println("You have exhausted " + " N trials.");
+ 
+            System.out.println("The correct number was " + number);
+            }
+}
+    
+    
+    public static void main(String[]args) 
+{
+        
+   nggameoi();
+}
+
+}
+
+
+
+
+
+}
